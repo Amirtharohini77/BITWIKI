@@ -59,7 +59,7 @@ const Header = () => {
 
       <div style={styles.right}>
         <input type="text" placeholder="Search BIT Wiki" style={styles.input} />
-        <span>Rahul.k.ad424@bitsathy.ac.in</span>
+        <span>Rahul.k.ad24@bitsathy.ac.in</span>
         <button style={styles.logoutBox}>Log out</button>
       </div>
     </header>

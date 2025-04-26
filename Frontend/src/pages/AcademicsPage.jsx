@@ -1,12 +1,22 @@
 // pages/AcademicsPage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CSE from './CSE.jsx';
 
 function AcademicsPage() {
 const styles = {
   table: {
     width: '100%',
+    margin: '20px auto',
+    borderCollapse: 'collapse',
+    border: '3px solid #fff',
+    borderRadius: '5px',
+    boxShadow: '0 2px 10px rgba(21, 15, 15, 0.87)',
+    backgroundColor: '#fff',
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '16px',
+    marginTop: '20px',
+    marginBottom: '20px',
+    borderWidth: '2px',
   },
   thtd: {
     border: '0.5px solid #ccc',
@@ -15,53 +25,74 @@ const styles = {
     backgroundColor: '#f2f2f2',
   }
 }
+  
   return (
+    
     <div>
-      <h2>BITWIKI:Departments and Semesters 2024-2025</h2>
-     
-     <table style={styles.table}>
+     <table style={{
+  ...styles.table,
+  width: '60%',
+  border: '2px solid #aaa',
+}}>
+  <thead>
+    <tr>
+      <th style={{
+        ...styles.thtd,
+        backgroundColor: '#004080',
+        color: 'white'
+      }}>
+        <h2 style={{
+          textAlign: 'center',
+          fontSize: '22px',
+          fontWeight: 'bold',
+          margin: '10px 0'
+        }}>
+          Contents
+        </h2>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      { label: "2022 Regulation", path: "/Academics/2022" },
+      { label: "Other Regulations", path: "/Academics/2022" },
+      { label: "2024 Regulation", path: "/Academics/2022" },
+      { label: "2021 Regulation", path: "/Academics/2022" },
+      { label: "2018 Regulation", path: "/Academics/2022" },
+      { label: "Previous Academic and Curriculum", path: "/Academics/2022" },
+    ].map((item, index) => (
+      <tr key={index}>
+        <td style={{
+          ...styles.thtd,
+          padding: '8px 12px',
+          backgroundColor: index % 2 === 0 ? '#f9f9f9' : '#fff'
+        }}>
+          <Link
+            to={item.path}
+            style={{
+              textDecoration: 'none',
+              color: '#0000CD',
+              fontWeight: '500'
+            }}
+            onMouseEnter={e => e.target.style.color = '#004080'}
+            onMouseLeave={e => e.target.style.color = '#0000CD'}
+          >
+            {item.label}
+          </Link>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+
+      <table style={styles.table}>
       <thead style={styles.thtd}>
-        <tr>
-          <th style={styles.thtd}><h2 style={
+      <tr>
+          <th style={styles.thtd}><h4 style={
             { textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }
-          }>Contents</h2></th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={styles.thtd}><Link to="/Academics/2022" style={{ textDecoration: 'none', color: '#0000CD' }}>2022 Regulation</Link></td>
-  
-  
-        </tr>
-        <tr>
-          <td style={styles.thtd}><Link to="/Academics/2022" style={{ textDecoration: 'none', color: '#0000CD' }}>Other Regulations</Link></td>
-
-        </tr>
-        <tr>
-          <td style={styles.thtd}><Link to="/Academics/2022" style={{ textDecoration: 'none', color: '#0000CD' }}>2024 Regulation</Link></td>
-
-        </tr>
-        <tr>
-          <td style={styles.thtd}><Link to="/Academics/2022" style={{ textDecoration: 'none', color: '#0000CD' }}>2021 Regulation</Link></td>
-
-        </tr>
-        <tr>
-          <td style={styles.thtd}><Link to="/Academics/2022" style={{ textDecoration: 'none', color: '#0000CD' }}>2018 Regulation</Link></td>
-        </tr>
-       
-        <tr>
-          <td style={styles.thtd}><Link to="/Academics/2022" style={{ textDecoration: 'none', color: '#0000CD' }}>	Previous Academic and Curriculum</Link></td>
-        </tr>
-      </tbody>
-     
-      </table>
-
-     
-         <h1>2022 Regulation</h1>
-         <table style={styles.table}>
-      <thead style={styles.thtd}>
-        
+          }>2022 Regulation</h4></th>
+          </tr>
         <tr>
           <th style={styles.thtd}><h4 style={
             { textAlign: 'center', fontSize: '15px', fontWeight: 'bold' }
@@ -71,11 +102,11 @@ const styles = {
           </table>
           <table style={styles.table}>
           <thead>
-          <tr>
-          <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Department</h4></th>
-          <th style={styles.thtd}><h4 style={{textAlign: 'center'}} >Semester</h4></th>
-        </tr>
-        </thead>
+         <tr>
+          <th style={styles.thtd}><h4 style={{ textAlign: 'center' }}>Department</h4></th>
+          <th colSpan="2" style={styles.thtd}><h4 style={{ textAlign: 'center' }}>Semester</h4></th>
+         </tr>
+         </thead>
           <tbody>
           <tr>
           <td style={styles.thtd}>Computer Science Engineering</td>
@@ -142,11 +173,11 @@ const styles = {
           </table>
           <table style={styles.table}>
           <thead>
-          <tr>
-          <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Department</h4></th>
-          <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Semester</h4></th>
-        </tr>
-        </thead>
+    <tr>
+      <th style={styles.thtd}><h4 style={{ textAlign: 'center' }}>Department</h4></th>
+      <th colSpan="2" style={styles.thtd}><h4 style={{ textAlign: 'center' }}>Semester</h4></th>
+    </tr>
+  </thead>
           <tbody>
           <tr>
           <td style={styles.thtd}>Agricultural Engineering</td>
@@ -192,9 +223,14 @@ const styles = {
           </tbody>
           </table>
 
-        <h2>Other Regulations</h2>
           <table style={styles.table}>
+            
           <thead>
+          <tr>
+          <th colspan="5" style={styles.thtd}><h4 style={
+            { textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }
+          }>Other Regulations</h4></th>
+          </tr>
           <tr>
           <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Courses</h4></th>
           <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>French</h4></th>
@@ -202,20 +238,21 @@ const styles = {
           <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Japanese</h4></th>
           <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Hindi</h4></th>
         </tr>
-
         </thead>
           <tbody>
           </tbody>
           </table>
 
-          <h2>2024 Regulation</h2>
          <table style={styles.table}>
-      <thead style={styles.thtd}>  
-          </thead>
           </table>
-          <table style={styles.table}>
+
+      <table style={styles.table}>
       <thead style={styles.thtd}>
-        
+      <tr>
+          <th style={styles.thtd}><h4 style={
+            { textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }
+          }>2024 Regulation</h4></th>
+          </tr>
         <tr>
           <th style={styles.thtd}><h4 style={
             { textAlign: 'center', fontSize: '15px', fontWeight: 'bold' }
@@ -228,26 +265,25 @@ const styles = {
           <thead>
           <tr>
           <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Department</h4></th>
-          <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Semester</h4></th>
+          <th colspan="2" style={styles.thtd}><h4 style={{textAlign: 'center'}}>Semester</h4></th>
         </tr>
         </thead>
-          <tbody>
-          
+          <tbody> 
           <tr>
           <td style={styles.thtd}>Master of Business Administration</td>
-          <td style={styles.thtd}>Biomedical Engineering</td>
+          <td style={styles.thtd}>Semester 1</td>
+          <td style={styles.thtd}>Semester 2</td>
           </tr>
           </tbody>
           </table>
-
-          <h2>2021 Regulation</h2>
-         <table style={styles.table}>
-      <thead style={styles.thtd}>  
-          </thead>
-          </table>
+        
           <table style={styles.table}>
       <thead style={styles.thtd}>
-        
+      <tr>
+          <th style={styles.thtd}><h4 style={
+            { textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }
+          }>2021 Regulation</h4></th>
+          </tr>
         <tr>
           <th style={styles.thtd}><h4 style={
             { textAlign: 'center', fontSize: '15px', fontWeight: 'bold' }
@@ -260,26 +296,26 @@ const styles = {
           <thead>
           <tr>
           <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Department</h4></th>
-          <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Semester</h4></th>
+          <th colspan="2" style={styles.thtd}><h4 style={{textAlign: 'center'}}>Semester</h4></th>
         </tr>
         </thead>
           <tbody>
           
           <tr>
           <td style={styles.thtd}>Master of Business Administration</td>
-          <td style={styles.thtd}>Biomedical Engineering</td>
+          <td style={styles.thtd}>Semester 1</td>
+          <td style={styles.thtd}>Semester 2</td>
           </tr>
           </tbody>
           </table>
 
-          <h2>2018 Regulation</h2>
-         <table style={styles.table}>
-      <thead style={styles.thtd}>  
-          </thead>
-          </table>
-          <table style={styles.table}>
+      <table style={styles.table}>
       <thead style={styles.thtd}>
-      
+      <tr>
+          <th style={styles.thtd}><h4 style={
+            { textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }
+          }>2018 Regulation</h4></th>
+          </tr>
         <tr>
           <th style={styles.thtd}><h4 style={
             { textAlign: 'center', fontSize: '15px', fontWeight: 'bold' }
@@ -288,11 +324,11 @@ const styles = {
           </thead>
           <table style={styles.table}>
           <thead>
-          <tr>
-          <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Department</h4></th>
-          <th style={styles.thtd}><h4 style={{textAlign: 'center'}} colspan={2}>Semester</h4></th>
-        </tr>
-        </thead>
+    <tr>
+      <th style={styles.thtd}><h4 style={{ textAlign: 'center' }}>Department</h4></th>
+      <th colSpan="2" style={styles.thtd}><h4 style={{ textAlign: 'center' }}>Semester</h4></th>
+    </tr>
+  </thead>
         
           <tbody>
           <tr>
@@ -359,11 +395,11 @@ const styles = {
           </table>
           <table style={styles.table}>
           <thead>
-          <tr>
-          <th style={styles.thtd}><h4 style={{textAlign: 'center'}}>Department</h4></th>
-          <th style={styles.thtd}><h4 style={{textAlign: 'center'}} >Semester</h4></th>
-        </tr>      
-        </thead>
+    <tr>
+      <th style={styles.thtd}><h4 style={{ textAlign: 'center' }}>Department</h4></th>
+      <th colSpan="2" style={styles.thtd}><h4 style={{ textAlign: 'center' }}>Semester</h4></th>
+    </tr>
+  </thead>
 
           <tbody>
           <tr>
@@ -406,14 +442,12 @@ const styles = {
           </table>
           </table>
 
-          <h3>Previous Academic and Curriculum</h3>
-         <table style={styles.table}>
-      <thead style={styles.thtd}>  
-          </thead>
-          </table>
-
         <table style={styles.table}>
-      
+        <tr>
+          <th style={styles.thtd}><h4 style={
+            { textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }
+          }>Previous Academic and Curriculum</h4></th>
+          </tr>
       <tbody>
         <tr>
           <td style={styles.thtd}><Link to="/Academics/2022" style={{ textDecoration: 'none', color: '#0000CD' }}>2023 - 2024 Academic and Curriculum</Link></td>
@@ -433,9 +467,7 @@ const styles = {
 
         </tr>       
       </tbody>
-     
-      </table>
-      
+      </table> 
       </div>   
   );
 }

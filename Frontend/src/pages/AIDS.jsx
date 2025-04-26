@@ -34,7 +34,7 @@ const AIDS = () => {
     }
   };
 
-  const clickableCourses = ['22MA101', '22PH102', '22CH103', '22GE001', '22GE003'];
+  const clickableCourses = ['22MA101', '22PH102', '22CH103', '22GE001', '22GE004'];
 
   return (
     <div className="p-6">
@@ -42,27 +42,32 @@ const AIDS = () => {
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr>
-              <th colSpan="8" className="text-xl font-bold bg-gray-100 px-4 py-3 border border-gray-300">
-                B.Tech. ARTIFICIAL INTELLIGENCE AND DATA SCIENCE
+              <th colSpan="8" className="text-xl font-bold bg-gray-100 px-4 py-3 border border-gray-500">
+                B.Tech ARTIFICIAL INTELLIGENCE AND DATA SCIENCE
               </th>
             </tr>
             <tr>
-              <th colSpan="8" className="text-base font-medium bg-gray-50 px-4 py-2 border border-gray-300">
+              <th colSpan="8" className="text-base font-medium bg-gray-50 px-4 py-2 border border-gray-500">
                 Minimum Credits to be Earned: 21.0
               </th>
             </tr>
-            <tr className="bg-gray-200 text-center font-semibold">
-              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[110px]">Code No.</th>
-              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[220px]">Course</th>
-              <th colSpan="2" className="border border-gray-300 px-3 py-2">Objectives & Outcomes</th>
-              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[50px]">L</th>
-              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[50px]">T</th>
-              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[50px]">P</th>
-              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[50px]">C</th>
+            <tr>
+              <th colSpan="8" className="text-base font-medium bg-gray-50 px-4 py-2 border border-gray-500">
+                Core courses
+              </th>
             </tr>
             <tr className="bg-gray-200 text-center font-semibold">
-              <th className="border border-gray-300 px-2 py-1">POs</th>
-              <th className="border border-gray-300 px-2 py-1">PEOs</th>
+              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[110px] border border-gray-500">Code No.</th>
+              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[220px] border border-gray-500">Course</th>
+              <th colSpan="2" className="border border-gray-300 px-3 py-2 border border-gray-500">Objectives & Outcomes</th>
+              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[50px] border border-gray-500">L</th>
+              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[50px] border border-gray-500">T</th>
+              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[50px] border border-gray-500">P</th>
+              <th rowSpan="2" className="border border-gray-300 px-3 py-2 w-[50px] border border-gray-500">C</th>
+            </tr>
+            <tr className="bg-gray-200 text-center font-semibold">
+              <th className="border border-gray-300 px-2 py-1 border border-gray-500">POs</th>
+              <th className="border border-gray-300 px-2 py-1 border border-gray-500">PEOs</th>
             </tr>
           </thead>
           <tbody>

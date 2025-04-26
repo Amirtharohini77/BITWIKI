@@ -24,12 +24,12 @@ const HomePage = () => {
       padding: '15px',
       marginBottom: '20px',
       border: '1px solid #ccc',
-      borderRadius: '4px'
+      borderRadius: '4px',
+      boxShadow: '0 2px 10px rgba(21, 15, 15, 0.87)',
     },
     heading: {
       fontSize: '27px',
       fontWeight: 'bold',
-      color: '#2c3e50',
       textAlign: 'center',
       textTransform: 'uppercase',
       letterSpacing: '1.2px',
@@ -48,9 +48,6 @@ const HomePage = () => {
       borderCollapse: 'collapse',
     },
     imageWrapper: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
       paddingTop: '10px'
     },
     image: {
@@ -66,7 +63,7 @@ const HomePage = () => {
       borderRadius: '5px'
     },
     th: {
-      border: 'px solid #111111',
+      border: '3px solid #111111',
       padding: '15px',
       backgroundColor: '#d3d3d3', // grey background for header
       fontSize: '17px',
@@ -77,19 +74,25 @@ const HomePage = () => {
   return (
     <div style={styles.container}>
       <Sidebar />
-      
       <div style={styles.content}>
         <Header />
         <main style={styles.main}>
         
           {/* Word of the Day */}
           <section style={styles.section}>
+          
             <h2 style={styles.heading}>Word for the Day</h2>
             <div style={styles.imageWrapper}>
               <img src={WOD} alt="Word of the Day" style={styles.image} />
             </div>
+            <div class="word-of-the-day">
+          <h1 className="text-xl font-bold text-centert py-2 mt-4 mb-1 border-b pb-1"></h1>
+          <h3 className="text-xl font-bold mt-4 mb-2 pb-1">Shuffle</h3>
+          <p><strong>Meaning:</strong> Walk by dragging one's feet.</p>
+          <p><strong>Example:</strong> He <strong>shuffled</strong> into the room, half-asleep.</p>
+         </div>
           </section>
-
+          
           {/* Placement Table */}
           <section style={styles.section}>
             <div style={styles.heading}>Placement Achievements 2023–2024</div>
@@ -138,6 +141,10 @@ const HomePage = () => {
             </table>
           </section>
         </main>
+       {/* Footer */}
+       <footer style={styles.footer}>
+          © 2025 College Wiki
+        </footer>
       </div>
     </div>
   );
